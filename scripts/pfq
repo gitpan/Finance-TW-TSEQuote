@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+use strict;
+use UNIVERSAL::require;
+use YAML;
+
+my $porfolio = YAML::LoadFile($ENV{HOME}.'/.pfq.yml');
+
+for (sort keys %$porfolio) {
+    my $module = "Finance::TW::${_}Quote";
+    $module->require or die $!;
+    for (@{$porfolio->{$_}}) {
+	my $result = $module->new($_)->get;
+	print "$_: ".$result->{MatchPrice}.$/;;
+    }
+}
+
+=head1 NAME
+
+pfq - stock porfolio query
+
+=head1 DESCRIPTION
+
+put the following in your ~/.pfq.yml
+
+  TSE:
+    - 2010
+  Emerging:
+    - 3481
+
+=cut
