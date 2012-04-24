@@ -1,15 +1,12 @@
---- #YAML:1.0
-name:                Finance-TW-TSEQuote
-version:             0.27
-abstract:            Check stock quotes from Taiwan Securities Exchange with Perl
-license:             ~
-generated_by:        ExtUtils::MakeMaker version 6.36
-distribution_type:   module
-requires:     
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         Finance-TW-TSEQuote
+version:      0.27
+version_from: lib/Finance/TW/TSEQuote.pm
+installdirs:  site
+requires:
     LWP::Simple:                   0
     URI::Escape:                   0
-meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
-    version: 1.2
-author:
-    - Chia-liang Kao (clkao@clkao.org)
+
+distribution_type: module
+generated_by: FUCK WHY I HAVE TO MANUALLY UPDATE THIS 1.0
